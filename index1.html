@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avara Art Studio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="user/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="user/wow-animate.css">
+</head>
+
+<body>
+  <a class="navbar-brand" id="logo" href="#"><img width="120x" src="user/image/logo.png"></a>
+
+  <div class="container-fluid p-0">
+
+    <main class="main" id="robl">
+      <section class="section">
+        <img src="https://cincinnatirefined.com/resources/media/52410020-8125-4012-a2d3-1d54bce98166-largeScale_CVIOXotherworld18of40.jpg?1568058641772" alt="">
+      </section>
+      <section class="section">
+        <img src="https://cincinnatirefined.com/resources/media/a0382d12-1edd-4736-a94b-6f8b439c8fc4-largeScale_CVIOXotherworld32of40.jpg?1567191512653" alt="">
+      </section>
+      <section class="section">
+        <img src="https://cincinnatirefined.com/resources/media/5a7d311c-942a-4f97-99bf-e05ba049fa0d-largeScale_CVIOXotherworld10of40.jpg?1567191315315" alt="">
+      </section>
+      <section class="section">
+        <img src="https://cincinnatirefined.com/resources/media/de33e1d1-5a05-4473-a169-a543f122c437-largeScale_CVIOXotherworld1of40.jpg?1567191296918" alt="">
+      </section>
+    </main>
+    <iframe id="pages" scrolling="seamless" style="padding: 105px 0px 80px 0px" ; width="100%" height="580px" src="<?php echo base_url('contact'); ?>" frameborder="0"></iframe>
+    <div id="top-left"><a style="color: white;" href="#"><span style="font-size: 12px;">STATEMENT</span></div></a>
+  </div>
+  <div id="top-right"><a style="color: white;" href="https://www.trendyol.com/" target="_blank"><span style="font-size: 12px;">SHOP</span></div></a></div>
+  <div id="bottom-left"><a style="color: white;" href="#"><span style="font-size: 12px;">ARCHIVE</span></div></a></div>
+  <div id="bottom-right"><a style="color: white;" href="#"><span style="font-size: 12px;">CONTACT</span></div></a></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script>
+    class Slider {
+      constructor(options) {
+        this.sections = document.querySelectorAll(options.section);
+        this.navigation = document.querySelector(options.dots);
+
+        this.navigation.addEventListener('click', this.scrollToSection.bind(this));
+        window.addEventListener('scroll', this.setDotStatus.bind(this));
+      }
+
+      removeDotStyles() {
+        const dots = this.navigation;
+        const is_active = dots.querySelector('.is-active');
+
+        if (is_active != null) {
+          is_active.classList.remove('is-active');
+        }
+      }
+
+      setDotStatus() {
+        const scroll_position = window.scrollY;
+        const dots = Array.from(this.navigation.children);
+
+        this.sections.forEach((section, index) => {
+          const half_window = window.innerHeight / 2;
+          const section_top = section.offsetTop;
+
+          if (scroll_position > section_top - half_window && scroll_position < section_top + half_window) {
+            this.removeDotStyles();
+            dots[index].classList.add('is-active');
+          }
+        })
+      }
+
+      scrollToSection(e) {
+        const dots = Array.from(this.navigation.children);
+        const window_height = window.innerHeight;
+
+        dots.forEach((dot, index) => {
+          if (dot == e.target) {
+
+            window.scrollTo({
+              top: window_height * index,
+              behavior: 'smooth',
+            });
+          }
+        });
+      }
+    }
+
+    new Slider({
+      section: '.section',
+      dots: '#js-dots',
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#top-left').addClass('animated slideInLeft');
+      $('#top-right').addClass('animated slideInRight');
+      $('#bottom-left').addClass('animated slideInLeft');
+      $('#bottom-right').addClass('animated slideInRight');
+    });
+
+    let zolaq = document.querySelector("#robl");
+    let iframeDok = document.querySelector('#pages');
+    iframeDok.style.display = 'none';
+    document.querySelector('#top-left').addEventListener('click', function() {
+      zolaq.style.display = "none";
+      iframeDok.contentWindow.document.location.href = 'about'
+      iframeDok.style.display = 'flex';
+    });
+
+    document.querySelector('#bottom-left').addEventListener('click', function() {
+      zolaq.style.display = "none";
+      iframeDok.contentWindow.document.location.href = 'gallery'
+      iframeDok.style.display = 'flex';
+    });
+    document.querySelector('#bottom-right').addEventListener('click', function() {
+      zolaq.style.display = "none";
+      iframeDok.contentWindow.document.location.href = 'contact'
+      iframeDok.style.display = 'flex';
+    });
+    document.querySelector('#logo').addEventListener('click', function() {
+      zolaq.style.display = "block";
+      iframeDok.contentWindow.document.location.href = 'index'
+      iframeDok.style.display = 'none';
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+</body>
+
+</html>

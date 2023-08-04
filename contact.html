@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Əlaqə</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+  <link rel="stylesheet" href="<?php echo base_url('public/assets/user/css/style.css'); ?>">
+</head>
+
+<body>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <hr>
+        <br>
+        <br>
+
+      </div>
+    </div>
+
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <div id="map" style="height: 400px; width: 100%;" class="embed-responsive embed-responsive-4by3">
+            <iframe style='filter:invert(100%) grayscale(10%);' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.526878055521!2d49.8403955!3d40.3750139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307da55e09d163%3A0x3054591bee19df63!2zMTMzIMaPbMO2dnPJmXQgUXVsaXlldiBrw7zDp8mZc2ksIEJha8Sx!5e0!3m2!1sru!2saz!4v1682479145579!5m2!1sru!2saz" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <div class="row d-flex flex-row justify-content-center align-items-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div style="background-color: black; border: none;" class="card shadow-sm">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="d-flex align-items-center mb-4">
+                <i style="color: white;" class="fas fa-map-marker-alt fa-2x mr-3"></i>
+              </div>
+              <p style="color: white;" class="card-text">Əlövsət Quliyev 133, Bakı</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div style="background-color: black; border: none;" class="card shadow-sm">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="d-flex align-items-center mb-4">
+                <i style="color: white;" class="fas fa-phone fa-2x mr-3"></i>
+              </div>
+              <p style="color: white;" class="card-text">555-123-4567</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div style="background-color: black; border: none;" class="card shadow-sm">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="d-flex align-items-center mb-4">
+                <i style="color: white;" class="fas fa-envelope fa-2x mr-3"></i>
+              </div>
+              <p style="color: white;" class="card-text">info@avara.az</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+
+    <!-- <div class="social-icons">
+      <a href="#"><i style="color: white;" class="fab fa-instagram"></i></a>
+      <a href="#"><i style="color: white;" class="fab fa-telegram"></i></a>
+      <a href="#"><i style="color: white;" class="fab fa-whatsapp"></i></a>
+      <a href="#"><i style="color: white;" class="fab fa-facebook"></i></a>
+    </div> -->
+
+    <br>
+
+    <!--     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p style="color: white;">&copy wwww.avara.az <br>2023</p>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+
+
+
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Fancybox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Si vous souhaitez ajouter des effets supplémentaires
+    // aux icônes des réseaux sociaux, vous pouvez utiliser
+    // JavaScript pour cela.
+
+    // Par exemple, voici un code pour faire tourner
+    // les icônes lorsqu'un utilisateur survole la souris.
+
+    const socialIcons = document.querySelectorAll('.social-icons a i');
+
+    socialIcons.forEach(icon => {
+      icon.addEventListener('mouseover', () => {
+        icon.style.transform = 'rotate(360deg)';
+      });
+
+      icon.addEventListener('mouseout', () => {
+        icon.style.transform = 'rotate(0deg)';
+      });
+    });
+  </script>
+</body>
+
+</html>
