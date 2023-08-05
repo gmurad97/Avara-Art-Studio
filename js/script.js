@@ -1,7 +1,7 @@
 const slider = document.querySelector(".slider");
 const slideImages = document.querySelectorAll(".slider__img");
 const slideImagesCount = slideImages.length;
-const slideInterval = 2000;
+const slideInterval = 3584;
 let slideIndex = 0;
 let autoSlideInterval;
 
