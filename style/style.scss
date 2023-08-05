@@ -7,7 +7,29 @@
 }
 
 body {
-    background-color: #1e272e;
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+iframe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 80vh;
+    padding: 32px;
+    border-radius: 40px;
+    backdrop-filter: blur(16px);
+    z-index: 2048;
+}
+
+.centerized-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
@@ -99,5 +121,36 @@ body {
         width: 100%;
         height: 100vh;
         object-fit: cover;
+    }
+}
+
+.statement {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 32px;
+}
+
+.statement-img {
+    margin-right: 64px;
+
+    &__img {
+        width: 444px;
+        height: auto;
+        border: 6px double black;
+        border-radius: 16px;
+    }
+}
+
+.statement-title {
+
+    &__p {
+        font-family: "Courier New";
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: justify;
+        line-height: 24px;
+        color: black;
     }
 }
