@@ -10,7 +10,7 @@ body {
     background-color: rgba(255, 255, 255, 0.24);
 }
 
-iframe {
+.iframe__content {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -19,13 +19,12 @@ iframe {
     height: 80vh;
     padding: 32px;
     border-radius: 40px;
-    backdrop-filter: blur(16px);
     z-index: 2048;
 }
 
 .centerized-content {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +49,14 @@ iframe {
         &:hover {
             filter: invert(39%) sepia(14%) saturate(1712%) hue-rotate(166deg) brightness(102%) contrast(88%);
         }
+    }
+
+    &__active {
+        filter: invert(39%) sepia(14%) saturate(1712%) hue-rotate(166deg) brightness(102%) contrast(88%);
+    }
+
+    &__link {
+        display: flex;
     }
 
     &__top-left {
@@ -146,11 +153,87 @@ iframe {
 .statement-title {
 
     &__p {
-        font-family: "Courier New";
-        font-weight: bold;
+        font-family: "Arial";
+        font-weight: 200;
         text-transform: uppercase;
         text-align: justify;
         line-height: 24px;
-        color: black;
+        color: white;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-wrapper {
+    width: 256px;
+    height: auto;
+    margin: 32px;
+
+    &:not(:last-of-type) {
+        margin-right: 7px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.32), -4px -4px 6px rgba(255, 255, 255, 0.32);
+    }
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe__maps {
+    width: 100%;
+    height: 512px;
+    filter: invert(100%) grayscale(10%);
+    border: none;
+    outline: none;
+    padding: 32px;
+}
+
+.contact-info {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 32px;
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 3;
+        align-items: center;
+        background-color: rgba(0, 0, 0,0.88);
+        padding: 32px;
+        border-radius: 8px;
+
+        &:not(:last-of-type){
+            margin-right: 32px;
+        }
+    }
+
+    &__fasicon {
+        font-size: 32px;
+        color: white;
+    }
+
+    &__subtitle {
+        font-family: "Arial";
+        font-size: 12px;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 16px;
     }
 }
