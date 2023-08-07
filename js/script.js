@@ -1,4 +1,3 @@
-/*SLIDER START*/
 const slider = document.querySelector(".slider");
 const slideImages = document.querySelectorAll(".slider__img");
 const slideImagesCount = slideImages.length;
@@ -17,12 +16,9 @@ function startAutoSlide() {
 }
 
 startAutoSlide();
-/*SLIDER END*/
 
-/*NAV LINK START*/
 const topLeftLink = document.querySelector("#top_left_link");
 const topCenterLink = document.querySelector("#top_center_link");
-/* const topRightLink = document.querySelector("#top_right_link"); */
 const bottomLeftLink = document.querySelector("#bottom_left_link");
 const bottomRightLink = document.querySelector("#bottom_right_link");
 
@@ -32,9 +28,7 @@ function activeLinkClear() {
   if (topLeftLink.classList.contains("menu-item__active")) {
     topLeftLink.classList.remove("menu-item__active")
   }
-  /*   if (topRightLink.classList.contains("menu-item__active")) {
-      topRightLink.classList.remove("menu-item__active")
-    } */
+
   if (bottomLeftLink.classList.contains("menu-item__active")) {
     bottomLeftLink.classList.remove("menu-item__active")
   }
@@ -54,12 +48,6 @@ topLeftLink.addEventListener("click", function () {
   iFrameShowLink.src = "statement.html";
 });
 
-/* topRightLink.addEventListener("click", function () {
-  activeLinkClear();
-  topRightLink.classList.toggle("menu-item__active");
-  iFrameShowLink.src = "#";
-}); */
-
 bottomLeftLink.addEventListener("click", function () {
   activeLinkClear();
   bottomLeftLink.classList.toggle("menu-item__active");
@@ -71,4 +59,3 @@ bottomRightLink.addEventListener("click", function () {
   bottomRightLink.classList.toggle("menu-item__active");
   iFrameShowLink.src = "contact.html";
 });
-/*NAV LINK STOP*/
