@@ -1,120 +1,112 @@
-<!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-<!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-    <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
-    </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-</a>
-
-<!-- Divider -->
-<hr class="sidebar-divider my-0">
-
-<!-- Nav Item - Dashboard -->
-<li class="nav-item active">
-    <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-    Interface
-</div>
-
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Components</span>
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('dashboard'); ?>">
+        <div class="sidebar-brand-text mx-3">Avara Admin</div>
     </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+    <hr class="sidebar-divider my-0">
+    <style>
+        .xl-text-dashboard {
+            color: #fbc531 !important;
+        }
+
+        .xl-text-logo {
+            color: #fd79a8 !important;
+        }
+
+        .xl-text-gallery {
+            color: #20bf6b !important;
+        }
+
+        .xl-text-team {
+            color: #2d98da !important;
+        }
+
+        .xl-text-about-us {
+            color: #ced6e0 !important;
+        }
+
+        .xl-text-services {
+            color: #cd6133 !important;
+        }
+
+        .xl-text-working-hours {
+            color: #6a89cc !important;
+        }
+
+        .xl-text-price {
+            color: #33d9b2 !important;
+        }
+
+        .xl-text-testimonial {
+            color: #b8e994 !important;
+        }
+
+        .xl-text-footer {
+            color: #F79F1F !important;
+        }
+    </style>
+
+
+
+    <!-- DASHBOARD MENU START -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('dashboard'); ?>">
+            <i class="fas fa-fw fa-tachometer-alt xl-text-dashboard"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+    <!-- DASHBOARD MENU END -->
+
+    <!-- GALLERY START -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGallery" aria-expanded="true" aria-controls="collapseGallery">
+            <i class="fas fa-images xl-text-testimonial"></i>
+            <span>Gallery</span>
+        </a>
+        <div id="collapseGallery" class="collapse" aria-labelledby="headingGallery" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a href="#" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                    <i style="font-size:16px;" class="fas fa-fw fa-plus mr-3"></i>Add Image
+                </a>
+                <a href="#" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                    <i style="font-size:16px;" class="fas fa-fw fa-list mr-3"></i>Image List
+                </a>
+            </div>
         </div>
+    </li>
+    <!-- GALLERY END -->
+
+    <!-- PRICE START -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-money-bill-wave xl-text-price"></i>
+            <span>Price</span>
+        </a>
+    </li>
+    <!-- PRICE END -->
+
+    <!-- ABOUT_US MENU START -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+            <i class="fas fa-fw fa-address-card xl-text-about-us"></i>
+            <span>About Us</span>
+        </a>
+    </li>
+    <!-- ABOUT_US MENU END -->
+
+    <!-- ABOUT_US MENU START -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+            <i class="fas fa-fw fa-address-card xl-text-about-us"></i>
+            <span>About Us</span>
+        </a>
+    </li>
+    <!-- ABOUT_US MENU END -->
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- SIDEBAR TOGGLE START -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-</li>
-
-<!-- Nav Item - Utilities Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
-        <span>Utilities</span>
-    </a>
-    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-        </div>
-    </div>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-    Addons
-</div>
-
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Pages</span>
-    </a>
-    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-        </div>
-    </div>
-</li>
-
-<!-- Nav Item - Charts -->
-<li class="nav-item">
-    <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Charts</span></a>
-</li>
-
-<!-- Nav Item - Tables -->
-<li class="nav-item">
-    <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider d-none d-md-block">
-
-<!-- Sidebar Toggler (Sidebar) -->
-<div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-</div>
-
-<!-- Sidebar Message -->
-<div class="sidebar-card d-none d-lg-flex">
-    <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-    <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-</div>
-
+    <!-- SIDEBAR TOGGLE END -->
 </ul>
-<!-- End of Sidebar -->
