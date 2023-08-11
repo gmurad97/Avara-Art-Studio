@@ -52,19 +52,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 //USER
-$route['default_controller']        = 'UserController/index';
-$route['home']                      = 'UserController/index';
-$route['statement']                 = 'UserController/statement';
-$route['archive']                   = 'UserController/archive';
-$route['contact']                   = 'UserController/contact';
+$route['default_controller']            = 'UserController/index';
+$route['home']                          = 'UserController/index';
+$route['statement']                     = 'UserController/statement';
+$route['archive']                       = 'UserController/archive';
+$route['contact']                       = 'UserController/contact';
 
 
 
 //ADMIN
-$route["admin_x567"]                = "AdminController/avara_login";
-$route["admin_x567_action"]         = "AdminController/avara_login_action";
-$route["dashboard"]                 = "AdminController/avara_dashboard";
+$route["admin_x567"]                    = "AdminController/avara_login";
+$route["admin_x567_action"]             = "AdminController/avara_login_action";
+$route["dashboard"]                     = "AdminController/avara_dashboard";
 
+//Admin content
+$route["statement_create"]              = "AdminController/avara_statement_create";
+$route["statement_create_action"]       = "AdminController/avara_statement_create_action";
+$route["statement_edit"]                = "AdminController/avara_statement_edit";
+$route["statement_edit_action"]         = "AdminController/avara_statement_edit_action";
+
+//Admin content
+$route["gallery_create"]                = "AdminController/avara_gallery_create";
+$route["gallery_create_action"]         = "AdminController/avara_gallery_create_action";
+$route["gallery_list"]                  = "AdminController/avara_gallery_list";
+$route["gallery_delete/(.*)"]           = "AdminController/avara_gallery_delete/$1";
 
 
 $route['404_override'] = '';

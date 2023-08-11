@@ -43,4 +43,127 @@ class AdminController extends CI_Controller
     {
         $this->load->view("admin/Dashboard");
     }
+
+    public function avara_statement_create()
+    {
+        $checkRowsStatement = $this->AdminModel->xl_rows_control("statement", "s_id");
+        if ($checkRowsStatement == (-1)) {
+            $this->load->view("admin/Statement/Create");
+        } else {
+            redirect(base_url("statement_edit"));
+        }
+    }
+
+    public function avara_statement_create_action()
+    {
+        $input_statement_title = $this->input->post("input_statement_title", true);
+
+        $statement_cfg_img["upload_path"]      = "./file_manager/statement/";
+        $statement_cfg_img["allowed_types"]    = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+        $statement_cfg_img["file_ext_tolower"] = true;
+        $statement_cfg_img["remove_spaces"]    = true;
+        $statement_cfg_img["encrypt_name"]     = true;
+
+        $this->load->library("upload", $statement_cfg_img);
+
+        if ($this->upload->do_upload("input_statement_img")) {
+            $statement_img = $this->upload->data();
+            $data = [
+                "s_title"   => $input_statement_title,
+                "s_img"     => $statement_img["file_name"]
+            ];
+            $this->AdminModel->insert_statement_data($data);
+            redirect(base_url('statement_edit'));
+        } else {
+            $data = [
+                "s_title"   => $input_statement_title
+            ];
+            $this->AdminModel->insert_statement_data($data);
+            redirect(base_url('statement_edit'));
+        }
+    }
+
+    public function avara_statement_edit()
+    {
+        $checkRowsStatement = $this->AdminModel->xl_rows_control("statement", "s_id");
+        if ($checkRowsStatement == (-1)) {
+            redirect(base_url("statement_create"));
+        } else {
+            $data["statement"] = $this->AdminModel->get_statement_data($this->AdminModel->xl_rows_control("statement", "s_id"));
+            $this->load->view("admin/Statement/Edit", $data);
+        }
+    }
+
+    public function avara_statement_edit_action()
+    {
+        $input_statement_title = $this->input->post("input_statement_title", true);
+
+        $statement_cfg_img["upload_path"]      = "./file_manager/statement/";
+        $statement_cfg_img["allowed_types"]    = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+        $statement_cfg_img["file_ext_tolower"] = true;
+        $statement_cfg_img["remove_spaces"]    = true;
+        $statement_cfg_img["encrypt_name"]     = true;
+
+        $this->load->library("upload", $statement_cfg_img);
+
+        if ($this->upload->do_upload("input_statement_img")) {
+            $statement_img = $this->upload->data();
+            $data = [
+                "s_title"   => $input_statement_title,
+                "s_img"     => $statement_img["file_name"]
+            ];
+            $this->AdminModel->update_statement_data($this->AdminModel->xl_rows_control("statement", "s_id"), $data);
+            redirect(base_url('statement_edit'));
+        } else {
+            $data = [
+                "s_title"   => $input_statement_title
+            ];
+            $this->AdminModel->update_statement_data($this->AdminModel->xl_rows_control("statement", "s_id"), $data);
+            redirect(base_url('statement_edit'));
+        }
+    }
+
+
+    public function avara_gallery_create()
+    {
+        $this->load->view("admin/Gallery/Create");
+    }
+    public function avara_gallery_create_action()
+    {
+        $g_cfg_img["upload_path"]       = "./file_manager/gallery";
+        $g_cfg_img["allowed_types"]     = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+        $g_cfg_img["file_ext_tolower"]  = true;
+        $g_cfg_img["remove_spaces"]     = true;
+        $g_cfg_img["encrypt_name"]      = true;
+
+        $this->load->library("upload", $g_cfg_img);
+
+        if ($this->upload->do_upload("input_gallery_img")) {
+            $gallery_img = $this->upload->data();
+            $data = [
+                "g_img" => $gallery_img["file_name"]
+            ];
+            $data = $this->security->xss_clean($data);
+            $this->AdminModel->gallery_create($data);
+            redirect(base_url("gallery_list"));
+        } else {
+            $this->session->set_flashdata("gallery_img_unupload", "Error! Image not uploaded.");
+            redirect(base_url("gallery_create"));
+        }
+    }
+
+    public function avara_gallery_list()
+    {
+        $data["gallery_get_db"] = $this->AdminModel->gallery_get_db();
+        $this->load->view("admin/gallery/List", $data);
+    }
+
+    public function avara_gallery_delete($id)
+    {
+        if (file_exists("./file_manager/gallery/" . $this->AdminModel->gallery_get_id_db($id)["g_img"])) {
+            unlink("./file_manager/gallery/" . $this->AdminModel->gallery_get_id_db($id)["g_img"]);
+        }
+        $this->AdminModel->gallery_id_delete($id);
+        redirect(base_url("gallery_list"));
+    }
 }

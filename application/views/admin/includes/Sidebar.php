@@ -3,55 +3,12 @@
         <div class="sidebar-brand-text mx-3">Avara Admin</div>
     </a>
     <hr class="sidebar-divider my-0">
-    <style>
-        .xl-text-dashboard {
-            color: #fbc531 !important;
-        }
-
-        .xl-text-logo {
-            color: #fd79a8 !important;
-        }
-
-        .xl-text-gallery {
-            color: #20bf6b !important;
-        }
-
-        .xl-text-team {
-            color: #2d98da !important;
-        }
-
-        .xl-text-about-us {
-            color: #ced6e0 !important;
-        }
-
-        .xl-text-services {
-            color: #cd6133 !important;
-        }
-
-        .xl-text-working-hours {
-            color: #6a89cc !important;
-        }
-
-        .xl-text-price {
-            color: #33d9b2 !important;
-        }
-
-        .xl-text-testimonial {
-            color: #b8e994 !important;
-        }
-
-        .xl-text-footer {
-            color: #F79F1F !important;
-        }
-    </style>
-
-
 
     <!-- DASHBOARD MENU START -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('dashboard'); ?>">
-            <i class="fas fa-fw fa-tachometer-alt xl-text-dashboard"></i>
-            <span>Dashboard</span>
+        <a class="nav-link" href="<?php echo base_url('statement_create'); ?>">
+            <i class="fas fa-fw fa-address-card"></i>
+            <span>Statement</span>
         </a>
     </li>
     <!-- DASHBOARD MENU END -->
@@ -64,16 +21,22 @@
         </a>
         <div id="collapseGallery" class="collapse" aria-labelledby="headingGallery" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a href="#" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                <a href="<?php echo base_url('gallery_create'); ?>" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
                     <i style="font-size:16px;" class="fas fa-fw fa-plus mr-3"></i>Add Image
                 </a>
-                <a href="#" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                <a href="<?php echo base_url('gallery_list'); ?>" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
                     <i style="font-size:16px;" class="fas fa-fw fa-list mr-3"></i>Image List
                 </a>
             </div>
         </div>
     </li>
     <!-- GALLERY END -->
+
+
+
+
+
+
 
     <!-- PRICE START -->
     <li class="nav-item">
