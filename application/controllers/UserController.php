@@ -9,7 +9,8 @@ class UserController extends CI_Controller
     }
     public function index()
     {
-        $this->load->view("user/index.php");
+        $data["slider_data"] = $this->UserModel->slider_get_db();
+        $this->load->view("user/index.php",$data);
     }
 
     public function statement()
@@ -20,7 +21,8 @@ class UserController extends CI_Controller
 
     public function archive()
     {
-        $this->load->view("user/gallery.php");
+        $data["gallery_data"] = $this->UserModel->gallery_get_db();
+        $this->load->view("user/gallery.php",$data);
     }
 
     public function contact()

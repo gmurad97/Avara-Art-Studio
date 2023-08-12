@@ -32,44 +32,25 @@
     </li>
     <!-- GALLERY END -->
 
-
-
-
-
-
-
-    <!-- PRICE START -->
+    <!-- SLIDER GALLERY START -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-money-bill-wave xl-text-price"></i>
-            <span>Price</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSlider" aria-expanded="true" aria-controls="collapseSlider">
+            <i class="fas fa-images xl-text-testimonial"></i>
+            <span>SLIDER</span>
         </a>
+        <div id="collapseSlider" class="collapse" aria-labelledby="headingSlider" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a href="<?php echo base_url('slider_create'); ?>" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                    <i style="font-size:16px;" class="fas fa-fw fa-plus mr-3"></i>Add Image
+                </a>
+                <a href="<?php echo base_url('slider_list'); ?>" style="font-size:14px; font-weight:bold;" class="collapse-item d-flex flex-row justify-content-start align-items-center">
+                    <i style="font-size:16px;" class="fas fa-fw fa-list mr-3"></i>Image List
+                </a>
+            </div>
+        </div>
     </li>
-    <!-- PRICE END -->
+    <!-- SLIDER GALLERY END -->
 
-    <!-- ABOUT_US MENU START -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="fas fa-fw fa-address-card xl-text-about-us"></i>
-            <span>About Us</span>
-        </a>
-    </li>
-    <!-- ABOUT_US MENU END -->
 
-    <!-- ABOUT_US MENU START -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="fas fa-fw fa-address-card xl-text-about-us"></i>
-            <span>About Us</span>
-        </a>
-    </li>
-    <!-- ABOUT_US MENU END -->
 
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- SIDEBAR TOGGLE START -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-    <!-- SIDEBAR TOGGLE END -->
 </ul>

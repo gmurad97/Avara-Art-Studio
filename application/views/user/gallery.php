@@ -2,36 +2,11 @@
 
 <body class="centerized-content">
     <div class="gallery">
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
-        <div class="gallery-wrapper">
-            <img src="<?php echo base_url('public/assets/user/img/gallery/a564a45bbc56465897dd89878e.jpg'); ?>" alt="Gallery Image" class="gallery-wrapper__img">
-        </div>
+        <?php foreach ($gallery_data as $gallery_data_item) { ?>
+            <div class="gallery-wrapper">
+                <img src="<?php echo base_url('file_manager/gallery/') . $gallery_data_item['g_img']; ?>" alt="Gallery Image" class="gallery-wrapper__img">
+            </div>
+        <?php } ?>
     </div>
 </body>
 

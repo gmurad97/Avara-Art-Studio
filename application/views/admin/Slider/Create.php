@@ -4,8 +4,8 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between align-items-center">
-        <h6 class="m-0 font-weight-bold text-primary">Gallery &RightArrow; Create</h6>
-        <a href="<?php echo base_url('gallery_list'); ?>" class="btn btn-primary btn-icon-split">
+        <h6 class="m-0 font-weight-bold text-primary">slider &RightArrow; Create</h6>
+        <a href="<?php echo base_url('slider_list'); ?>" class="btn btn-primary btn-icon-split">
             <span class="icon text-white-50">
                 <i class="fas fa-arrow-left"></i>
             </span>
@@ -13,8 +13,8 @@
         </a>
     </div>
     <div class="card-body">
-        <form action="<?php echo base_url('gallery_create_action'); ?>" method="POST" enctype="multipart/form-data">
-            <h3 class="bg-gradient-dark text-center text-white mb-3 py-2 rounded"><b>Gallery</b></h3>
+        <form action="<?php echo base_url('slider_create_action'); ?>" method="POST" enctype="multipart/form-data">
+            <h3 class="bg-gradient-dark text-center text-white mb-3 py-2 rounded"><b>slider</b></h3>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -41,19 +41,19 @@
                                 background-color: rgba(178, 190, 181, 0.3);
                             }
                         </style>
-                        <label for="gallery_img"><b>Image Upload</b></label>
-                        <input type="file" name="input_gallery_img" id="gallery_img" hidden>
+                        <label for="slider_img"><b>Image Upload</b></label>
+                        <input type="file" name="input_slider_img" id="slider_img" hidden>
                         <div class="file_upload_block">
                             <i class="fas fa-plus-circle fas-js"></i>
                         </div>
                         <script>
-                            document.querySelector("#gallery_img").addEventListener("change", function() {
+                            document.querySelector("#slider_img").addEventListener("change", function() {
                                 document.querySelector(".fas-js").classList.replace("fa-plus-circle", "fa-pen");
-                                document.querySelector(".file_upload_block").style.backgroundImage = `url("${URL.createObjectURL(document.querySelector("#gallery_img").files[0])}")`;
+                                document.querySelector(".file_upload_block").style.backgroundImage = `url("${URL.createObjectURL(document.querySelector("#slider_img").files[0])}")`;
                                 document.querySelector(".file_upload_block").style.color = "#ffffff";
                             });
                             document.querySelector(".file_upload_block").addEventListener("click", function() {
-                                document.querySelector("#gallery_img").click();
+                                document.querySelector("#slider_img").click();
                             });
                         </script>
                     </div>
@@ -62,13 +62,13 @@
                     <div class="form-group">
                         <label for=""><b>Image Requirements</b></label>
                         <h3 class="h6 mb-2 text-danger py-1 rounded"><b>*Allowed Types:</b> <span class="px-1" style="border:2px solid red;border-radius:8px;"><b>JPG, JPEG, PNG, SVG</b></span></h3>
-                        <?php if ($this->session->flashdata("gallery_img_unupload")) { ?>
+                        <?php if ($this->session->flashdata("slider_img_unupload")) { ?>
                             <style>
                                 .bg-error-message {
                                     background-color: rgba(255, 0, 0, 0.16);
                                 }
                             </style>
-                            <h1 class="bg-error-message h6 text-center rounded p-3 mt-4"><?= $this->session->flashdata("gallery_img_unupload"); ?></h1>
+                            <h1 class="bg-error-message h6 text-center rounded p-3 mt-4"><?= $this->session->flashdata("slider_img_unupload"); ?></h1>
                         <?php } ?>
                     </div>
                 </div>

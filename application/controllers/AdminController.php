@@ -124,10 +124,20 @@ class AdminController extends CI_Controller
     }
 
 
+
+
+
+
+
+
+
+
+
     public function avara_gallery_create()
     {
         $this->load->view("admin/Gallery/Create");
     }
+
     public function avara_gallery_create_action()
     {
         $g_cfg_img["upload_path"]       = "./file_manager/gallery";
@@ -165,5 +175,55 @@ class AdminController extends CI_Controller
         }
         $this->AdminModel->gallery_id_delete($id);
         redirect(base_url("gallery_list"));
+    }
+
+
+
+
+
+
+
+
+    public function avara_slider_create()
+    {
+        $this->load->view("admin/Slider/Create");
+    }
+
+    public function avara_slider_create_action()
+    {
+        $s_cfg_img["upload_path"]       = "./file_manager/slider";
+        $s_cfg_img["allowed_types"]     = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+        $s_cfg_img["file_ext_tolower"]  = true;
+        $s_cfg_img["remove_spaces"]     = true;
+        $s_cfg_img["encrypt_name"]      = true;
+
+        $this->load->library("upload", $s_cfg_img);
+
+        if ($this->upload->do_upload("input_slider_img")) {
+            $slider_img = $this->upload->data();
+            $data = [
+                "s_img" => $slider_img["file_name"]
+            ];
+            $this->AdminModel->slider_create($data);
+            redirect(base_url("slider_list"));
+        } else {
+            $this->session->set_flashdata("slider_img_unupload", "Error! Image not uploaded.");
+            redirect(base_url("slider_create"));
+        }
+    }
+
+    public function avara_slider_list()
+    {
+        $data["slider_get_db"] = $this->AdminModel->slider_get_db();
+        $this->load->view("admin/Slider/List", $data);
+    }
+
+    public function avara_slider_delete($id)
+    {
+        if (file_exists("./file_manager/slider/" . $this->AdminModel->slider_get_id_db($id)["s_img"])) {
+            unlink("./file_manager/slider/" . $this->AdminModel->slider_get_id_db($id)["s_img"]);
+        }
+        $this->AdminModel->slider_id_delete($id);
+        redirect(base_url("slider_list"));
     }
 }

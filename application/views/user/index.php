@@ -30,9 +30,14 @@
     </nav>
     <div class="slider-container">
         <div class="slider">
-            <img src="<?php echo base_url('public/assets/user/img/slider/5a7d311c942a4f9999bfe05ba049fa0d.jpg'); ?>" alt="Slider Image" class="slider__img">
-            <img src="<?php echo base_url('public/assets/user/img/slider/a0382d121edd4736a94b6f8b439c8fc4.jpg'); ?>" alt="Slider Image" class="slider__img">
-            <img src="<?php echo base_url('public/assets/user/img/slider/de33e1d15a054473a169a543f122c437.jpg'); ?>" alt="Slider Image" class="slider__img">
+            <?php if (count($slider_data) >= 2) { ?>
+                <?php foreach($slider_data as $slider_data_item){ ?>
+                    <img src="<?php echo base_url('file_manager/slider/').$slider_data_item['s_img']; ?>" alt="Slider Image" class="slider__img">
+                <?php } ?>
+            <?php } else { ?>
+                <img src="<?php echo base_url('public/assets/user/img/slider/5a7d311c942a4f9999bfe05ba049fa0d.jpg'); ?>" alt="Slider Image" class="slider__img">
+                <img src="<?php echo base_url('public/assets/user/img/slider/a0382d121edd4736a94b6f8b439c8fc4.jpg'); ?>" alt="Slider Image" class="slider__img">
+            <?php } ?>
         </div>
     </div>
     <iframe src="" frameborder="0" class="iframe__content" id="iframe_show_link"></iframe>
