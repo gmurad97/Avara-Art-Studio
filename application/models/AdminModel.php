@@ -2,7 +2,6 @@
 
 class AdminModel extends CI_Model
 {
-
     public function xl_rows_control($tableName, $idDbName)
     {
         $about_us_rows_count = $this->db->from($tableName)->count_all_results();
@@ -34,30 +33,31 @@ class AdminModel extends CI_Model
     {
         return $this->db->where("s_id", $id)->get("statement")->row_array();
     }
+
     public function gallery_create($data)
     {
         $this->db->insert("gallery", $data);
     }
+
     public function gallery_get_db()
     {
         return $this->db->get("gallery")->result_array();
     }
+
     public function gallery_get_id_db($id)
     {
         return $this->db->where("g_id", $id)->get("gallery")->row_array();
     }
+
     public function gallery_id_delete($id)
     {
         $this->db->where("g_id", $id)->delete("gallery");
     }
 
-
-
     public function slider_create($data)
     {
         $this->db->insert("slider", $data);
     }
-
 
     public function slider_get_db()
     {
@@ -71,9 +71,6 @@ class AdminModel extends CI_Model
     {
         $this->db->where("s_id", $id)->delete("slider");
     }
-
-
-
 
     public function insert_contact_data($data)
     {

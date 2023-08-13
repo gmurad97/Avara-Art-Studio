@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="statement_title"><b>Statement title</b></label>
+                                <label for="statement_title"><b>Title</b></label>
                                 <textarea name="input_statement_title" id="statement_title" rows="16" class="form-control"><?php echo $statement["s_title"]; ?></textarea>
                             </div>
                         </div>

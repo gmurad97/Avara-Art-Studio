@@ -1,4 +1,4 @@
-<?php if ($this->session->userdata("adm_auth")) { ?>
+<?php if (!$this->session->userdata("adm_auth")) { ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -24,10 +24,12 @@
                             </div>
                             <form action="<?php echo base_url('admin_x567_action'); ?>" method="POST" enctype="application/x-www-form-urlencoded">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="inputUsername" placeholder="Enter Username...">
+                                    <label for="adm_username">Username</label>
+                                    <input id="adm_username" type="text" class="form-control" name="input_adm_username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" name="inputPassword" placeholder="Password">
+                                    <label for="adm_password">Password</label>
+                                    <input id="adm_password" type="password" class="form-control" name="input_adm_password">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                             </form>

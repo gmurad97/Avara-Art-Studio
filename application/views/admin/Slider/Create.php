@@ -4,7 +4,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between align-items-center">
-        <h6 class="m-0 font-weight-bold text-primary">slider &RightArrow; Create</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Slider &RightArrow; Create</h6>
         <a href="<?php echo base_url('slider_list'); ?>" class="btn btn-primary btn-icon-split">
             <span class="icon text-white-50">
                 <i class="fas fa-arrow-left"></i>
@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
         <form action="<?php echo base_url('slider_create_action'); ?>" method="POST" enctype="multipart/form-data">
-            <h3 class="bg-gradient-dark text-center text-white mb-3 py-2 rounded"><b>slider</b></h3>
+            <h3 class="bg-gradient-dark text-center text-white mb-3 py-2 rounded"><b>Slider</b></h3>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -62,14 +62,6 @@
                     <div class="form-group">
                         <label for=""><b>Image Requirements</b></label>
                         <h3 class="h6 mb-2 text-danger py-1 rounded"><b>*Allowed Types:</b> <span class="px-1" style="border:2px solid red;border-radius:8px;"><b>JPG, JPEG, PNG, SVG</b></span></h3>
-                        <?php if ($this->session->flashdata("slider_img_unupload")) { ?>
-                            <style>
-                                .bg-error-message {
-                                    background-color: rgba(255, 0, 0, 0.16);
-                                }
-                            </style>
-                            <h1 class="bg-error-message h6 text-center rounded p-3 mt-4"><?= $this->session->flashdata("slider_img_unupload"); ?></h1>
-                        <?php } ?>
                     </div>
                 </div>
             </div>

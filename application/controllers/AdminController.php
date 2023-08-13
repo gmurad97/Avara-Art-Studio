@@ -15,15 +15,13 @@ class AdminController extends CI_Controller
 
     public function avara_login_action()
     {
-        $input_username = $this->input->post("inputUsername", true);
-        $input_password = hash("md5", $this->input->post("inputPassword", true));
-
+        $input_username = $this->input->post("input_adm_username", true);
+        $input_password = hash("md5", $this->input->post("input_adm_password", true));
         if (!empty($input_username) && !empty($input_password)) {
             $data = [
                 "a_username" => $input_username,
                 "a_password" => $input_password
             ];
-
             $adm_data_row = $this->AdminModel->get_admin_data_row($data);
             if ($adm_data_row) {
                 $this->session->set_userdata("adm_auth", $adm_data_row["a_id"]);
@@ -38,6 +36,11 @@ class AdminController extends CI_Controller
         }
     }
 
+    public function avara_logout()
+    {
+        $this->session->unset_userdata("adm_auth");
+        redirect(base_url("admin_x567"));
+    }
 
     public function avara_dashboard()
     {
@@ -57,15 +60,12 @@ class AdminController extends CI_Controller
     public function avara_statement_create_action()
     {
         $input_statement_title = $this->input->post("input_statement_title", true);
-
         $statement_cfg_img["upload_path"]      = "./file_manager/statement/";
         $statement_cfg_img["allowed_types"]    = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
         $statement_cfg_img["file_ext_tolower"] = true;
         $statement_cfg_img["remove_spaces"]    = true;
         $statement_cfg_img["encrypt_name"]     = true;
-
         $this->load->library("upload", $statement_cfg_img);
-
         if ($this->upload->do_upload("input_statement_img")) {
             $statement_img = $this->upload->data();
             $data = [
@@ -97,16 +97,15 @@ class AdminController extends CI_Controller
     public function avara_statement_edit_action()
     {
         $input_statement_title = $this->input->post("input_statement_title", true);
-
         $statement_cfg_img["upload_path"]      = "./file_manager/statement/";
         $statement_cfg_img["allowed_types"]    = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
         $statement_cfg_img["file_ext_tolower"] = true;
         $statement_cfg_img["remove_spaces"]    = true;
         $statement_cfg_img["encrypt_name"]     = true;
-
         $this->load->library("upload", $statement_cfg_img);
-
         if ($this->upload->do_upload("input_statement_img")) {
+            array_map("unlink", array_filter((array)glob("file_manager/statement/*")));
+            $this->upload->do_upload("input_statement_img");
             $statement_img = $this->upload->data();
             $data = [
                 "s_title"   => $input_statement_title,
@@ -123,16 +122,6 @@ class AdminController extends CI_Controller
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     public function avara_gallery_create()
     {
         $this->load->view("admin/Gallery/Create");
@@ -145,15 +134,12 @@ class AdminController extends CI_Controller
         $g_cfg_img["file_ext_tolower"]  = true;
         $g_cfg_img["remove_spaces"]     = true;
         $g_cfg_img["encrypt_name"]      = true;
-
         $this->load->library("upload", $g_cfg_img);
-
         if ($this->upload->do_upload("input_gallery_img")) {
             $gallery_img = $this->upload->data();
             $data = [
                 "g_img" => $gallery_img["file_name"]
             ];
-            $data = $this->security->xss_clean($data);
             $this->AdminModel->gallery_create($data);
             redirect(base_url("gallery_list"));
         } else {
@@ -177,13 +163,6 @@ class AdminController extends CI_Controller
         redirect(base_url("gallery_list"));
     }
 
-
-
-
-
-
-
-
     public function avara_slider_create()
     {
         $this->load->view("admin/Slider/Create");
@@ -196,9 +175,7 @@ class AdminController extends CI_Controller
         $s_cfg_img["file_ext_tolower"]  = true;
         $s_cfg_img["remove_spaces"]     = true;
         $s_cfg_img["encrypt_name"]      = true;
-
         $this->load->library("upload", $s_cfg_img);
-
         if ($this->upload->do_upload("input_slider_img")) {
             $slider_img = $this->upload->data();
             $data = [
@@ -227,19 +204,9 @@ class AdminController extends CI_Controller
         redirect(base_url("slider_list"));
     }
 
-
-
-
-
-
-
-
-
-
-
     public function avara_contact_create()
     {
-        $checkRowscontact = $this->AdminModel->xl_rows_control("contact", "с_id");
+        $checkRowscontact = $this->AdminModel->xl_rows_control("contact", "c_id");
         if ($checkRowscontact == (-1)) {
             $this->load->view("admin/contact/Create");
         } else {
@@ -252,7 +219,6 @@ class AdminController extends CI_Controller
         $input_contact_location = $this->input->post("input_contact_location", true);
         $input_contact_phone = $this->input->post("input_contact_phone", true);
         $input_contact_email = $this->input->post("input_contact_email", true);
-
         $data = [
             "c_location"   => $input_contact_location,
             "c_phone"   => $input_contact_phone,
@@ -279,7 +245,6 @@ class AdminController extends CI_Controller
         $input_contact_location = $this->input->post("input_contact_location", true);
         $input_contact_phone = $this->input->post("input_contact_phone", true);
         $input_contact_email = $this->input->post("input_contact_email", true);
-
         $data = [
             "c_location"   => $input_contact_location,
             "c_phone"   => $input_contact_phone,

@@ -62,14 +62,6 @@
                     <div class="form-group">
                         <label for=""><b>Image Requirements</b></label>
                         <h3 class="h6 mb-2 text-danger py-1 rounded"><b>*Allowed Types:</b> <span class="px-1" style="border:2px solid red;border-radius:8px;"><b>JPG, JPEG, PNG, SVG</b></span></h3>
-                        <?php if ($this->session->flashdata("gallery_img_unupload")) { ?>
-                            <style>
-                                .bg-error-message {
-                                    background-color: rgba(255, 0, 0, 0.16);
-                                }
-                            </style>
-                            <h1 class="bg-error-message h6 text-center rounded p-3 mt-4"><?= $this->session->flashdata("gallery_img_unupload"); ?></h1>
-                        <?php } ?>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <img width="100%" src="<?= base_url('file_manager/sethub_unique/logo.png'); ?>" alt="">
+                        <img width="100%" src="<?php echo base_url('public/assets/admin/img/dashboard_logo.png'); ?>" alt="">
                     </div>
                 </div>
             </div>

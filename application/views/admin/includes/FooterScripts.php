@@ -26,4 +26,5 @@
 <script src="<?php echo base_url('public/assets/admin/js/demo/datatables-demo.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/admin/js/sb-admin-2.min.js'); ?>"></script>
 </body>
+
 </html>

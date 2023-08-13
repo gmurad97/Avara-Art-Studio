@@ -8,15 +8,15 @@
         <div class="contact-info">
             <div class="contact-info__block">
                 <i class="fas fa-map-marker-alt contact-info__fasicon"></i>
-                <p class="contact-info__subtitle">Əlövsət Quliyev 133, Bakı</p>
+                <p class="contact-info__subtitle"><?php echo $contact_data["c_location"]; ?></p>
             </div>
             <div class="contact-info__block">
                 <i class="fas fa-phone contact-info__fasicon"></i>
-                <p class="contact-info__subtitle">555-123-4567</p>
+                <p class="contact-info__subtitle"><?php echo $contact_data["c_phone"]; ?></p>
             </div>
             <div class="contact-info__block">
                 <i class="fas fa-envelope contact-info__fasicon"></i>
-                <p class="contact-info__subtitle">info@avara.az</p>
+                <p class="contact-info__subtitle"><?php echo $contact_data["c_email"]; ?></p>
             </div>
         </div>
     </div>

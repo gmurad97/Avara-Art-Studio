@@ -1,17 +1,17 @@
 <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('dashboard'); ?>">
-        <div class="sidebar-brand-text mx-3">Avara Admin</div>
+        <div class="sidebar-brand-text mx-3">Avara CMS</div>
     </a>
     <hr class="sidebar-divider my-0">
 
-    <!-- DASHBOARD MENU START -->
+    <!-- STATEMENT MENU START -->
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('statement_create'); ?>">
             <i class="fas fa-fw fa-address-card"></i>
             <span>Statement</span>
         </a>
     </li>
-    <!-- DASHBOARD MENU END -->
+    <!-- STATEMENT MENU END -->
 
     <!-- GALLERY START -->
     <li class="nav-item">
@@ -36,7 +36,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSlider" aria-expanded="true" aria-controls="collapseSlider">
             <i class="fas fa-images xl-text-testimonial"></i>
-            <span>SLIDER</span>
+            <span>Slider</span>
         </a>
         <div id="collapseSlider" class="collapse" aria-labelledby="headingSlider" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -51,15 +51,12 @@
     </li>
     <!-- SLIDER GALLERY END -->
 
-
     <!-- DASHBOARD MENU START -->
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('contact_create'); ?>">
             <i class="fas fa-fw fa-address-card"></i>
-            <span>Contact InfORM</span>
+            <span>Contact</span>
         </a>
     </li>
     <!-- DASHBOARD MENU END -->
-
-
 </ul>
