@@ -83,6 +83,12 @@ $route["slider_create_action"]         = "AdminController/avara_slider_create_ac
 $route["slider_list"]                  = "AdminController/avara_slider_list";
 $route["slider_delete/(.*)"]           = "AdminController/avara_slider_delete/$1";
 
+//Admin content
+$route["contact_create"]              = "AdminController/avara_contact_create";
+$route["contact_create_action"]       = "AdminController/avara_contact_create_action";
+$route["contact_edit"]                = "AdminController/avara_contact_edit";
+$route["contact_edit_action"]         = "AdminController/avara_contact_edit_action";
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

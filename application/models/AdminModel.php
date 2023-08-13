@@ -71,4 +71,22 @@ class AdminModel extends CI_Model
     {
         $this->db->where("s_id", $id)->delete("slider");
     }
+
+
+
+
+    public function insert_contact_data($data)
+    {
+        $this->db->insert("contact", $data);
+    }
+
+    public function get_contact_data($id)
+    {
+        return $this->db->where("c_id", $id)->get("contact")->row_array();
+    }
+
+    public function update_contact_data($id, $data)
+    {
+        $this->db->where("c_id", $id)->update("contact", $data);
+    }
 }

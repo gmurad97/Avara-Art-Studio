@@ -31,8 +31,8 @@
     <div class="slider-container">
         <div class="slider">
             <?php if (count($slider_data) >= 2) { ?>
-                <?php foreach($slider_data as $slider_data_item){ ?>
-                    <img src="<?php echo base_url('file_manager/slider/').$slider_data_item['s_img']; ?>" alt="Slider Image" class="slider__img">
+                <?php foreach ($slider_data as $slider_data_item) { ?>
+                    <img src="<?php echo base_url('file_manager/slider/') . $slider_data_item['s_img']; ?>" alt="Slider Image" class="slider__img">
                 <?php } ?>
             <?php } else { ?>
                 <img src="<?php echo base_url('public/assets/user/img/slider/5a7d311c942a4f9999bfe05ba049fa0d.jpg'); ?>" alt="Slider Image" class="slider__img">

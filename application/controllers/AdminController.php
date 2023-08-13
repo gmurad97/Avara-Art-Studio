@@ -226,4 +226,66 @@ class AdminController extends CI_Controller
         $this->AdminModel->slider_id_delete($id);
         redirect(base_url("slider_list"));
     }
+
+
+
+
+
+
+
+
+
+
+
+    public function avara_contact_create()
+    {
+        $checkRowscontact = $this->AdminModel->xl_rows_control("contact", "с_id");
+        if ($checkRowscontact == (-1)) {
+            $this->load->view("admin/contact/Create");
+        } else {
+            redirect(base_url("contact_edit"));
+        }
+    }
+
+    public function avara_contact_create_action()
+    {
+        $input_contact_location = $this->input->post("input_contact_location", true);
+        $input_contact_phone = $this->input->post("input_contact_phone", true);
+        $input_contact_email = $this->input->post("input_contact_email", true);
+
+        $data = [
+            "c_location"   => $input_contact_location,
+            "c_phone"   => $input_contact_phone,
+            "c_email"   => $input_contact_email,
+        ];
+
+        $this->AdminModel->insert_contact_data($data);
+        redirect(base_url('contact_edit'));
+    }
+
+    public function avara_contact_edit()
+    {
+        $checkRowscontact = $this->AdminModel->xl_rows_control("contact", "c_id");
+        if ($checkRowscontact == (-1)) {
+            redirect(base_url("contact_create"));
+        } else {
+            $data["contact"] = $this->AdminModel->get_contact_data($this->AdminModel->xl_rows_control("contact", "c_id"));
+            $this->load->view("admin/contact/Edit", $data);
+        }
+    }
+
+    public function avara_contact_edit_action()
+    {
+        $input_contact_location = $this->input->post("input_contact_location", true);
+        $input_contact_phone = $this->input->post("input_contact_phone", true);
+        $input_contact_email = $this->input->post("input_contact_email", true);
+
+        $data = [
+            "c_location"   => $input_contact_location,
+            "c_phone"   => $input_contact_phone,
+            "c_email"   => $input_contact_email,
+        ];
+        $this->AdminModel->update_contact_data($this->AdminModel->xl_rows_control("contact", "c_id"), $data);
+        redirect(base_url('contact_edit'));
+    }
 }

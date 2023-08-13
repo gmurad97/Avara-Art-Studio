@@ -52,5 +52,14 @@
     <!-- SLIDER GALLERY END -->
 
 
+    <!-- DASHBOARD MENU START -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('contact_create'); ?>">
+            <i class="fas fa-fw fa-address-card"></i>
+            <span>Contact InfORM</span>
+        </a>
+    </li>
+    <!-- DASHBOARD MENU END -->
+
 
 </ul>
