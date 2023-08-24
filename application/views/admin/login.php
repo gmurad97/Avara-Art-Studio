@@ -23,6 +23,7 @@
                                 <h1 class="h4 text-gray-900 text-uppercase mb-3">Avara Art Studio Admin Panel</h1>
                             </div>
                             <form action="<?php echo base_url('admin_x567_action'); ?>" method="POST" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
                                 <div class="form-group">
                                     <label for="adm_username">Username</label>
                                     <input id="adm_username" type="text" class="form-control" name="input_adm_username">
